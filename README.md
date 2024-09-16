@@ -1,6 +1,6 @@
-# Kali-Rootless-Termux
+# Kali Nethunter Rootless Termux Fixed
 
-#### Recently Kali Rootless Termux is Broken , [`https://www.kali.org/docs/nethunter/nethunter-rootless/`](https://www.kali.org/docs/nethunter/nethunter-rootless/) is no longer is working . So here it's fixed .
+#### Recently Kali Rootless Termux is Broken , [`kali.org`](https://www.kali.org/docs/nethunter/nethunter-rootless/) is no longer is working . So here it's fixed .
 
 #### Installation ( Just Paste This Command ):
 
