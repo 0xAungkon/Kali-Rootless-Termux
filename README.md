@@ -2,6 +2,8 @@
 
 #### Recently Kali Rootless Termux is Broken , [`kali.org`](https://www.kali.org/docs/nethunter/nethunter-rootless/) is no longer is working . So here it's fixed .
 
+![](images/ss1.png)
+
 #### Installation ( Just Paste This Command ):
 
 ```
