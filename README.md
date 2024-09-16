@@ -1,8 +1,8 @@
 # Kali-Rootless-Termux
 
-### Recently Kali Rootless Termux is Broken , [`https://www.kali.org/docs/nethunter/nethunter-rootless/`](https://www.kali.org/docs/nethunter/nethunter-rootless/) is no longer is working . So here it's fixed .
+#### Recently Kali Rootless Termux is Broken , [`https://www.kali.org/docs/nethunter/nethunter-rootless/`](https://www.kali.org/docs/nethunter/nethunter-rootless/) is no longer is working . So here it's fixed .
 
-### Installation ( Just Paste This Command ):
+#### Installation ( Just Paste This Command ):
 
 ```
 termux-setup-storage; pkg install wget; wget -O install-nethunter-termux "https://raw.githubusercontent.com/0xAungkon/Kali-Rootless-Termux/main/install-nethunter-termux" ; chmod +x install-nethunter-termux; ./install-nethunter-termux;
@@ -10,7 +10,7 @@ termux-setup-storage; pkg install wget; wget -O install-nethunter-termux "https:
 
 ---
 
-## Feel free to reach out if you have any questions or need help getting started!
+#### Feel free to reach out if you have any questions or need help getting started!
 
 Github: [https://0xaungkon.github.io/](https://0xaungkon.github.io/)
 
