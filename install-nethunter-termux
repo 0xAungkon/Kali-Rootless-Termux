@@ -104,8 +104,8 @@ function set_strings() {
 
 
     CHROOT=kali-${SYS_ARCH}
-    IMAGE_NAME=kalifs-${SYS_ARCH}-${wimg}.tar.xz
-    SHA_NAME=kalifs-${SYS_ARCH}-${wimg}.sha512sum
+    IMAGE_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.tar.xz
+    SHA_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.sha512sum
 }    
 
 function prepare_fs() {
@@ -137,7 +137,7 @@ function check_dependencies() {
     ## Workaround for termux-app issue #1283 (https://github.com/termux/termux-app/issues/1283)
     ##apt update -y &> /dev/null
     apt-get update -y &> /dev/null || apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew" dist-upgrade -y &> /dev/null
-
+    apt-get install wget -y;
     for i in proot tar axel; do
         if [ -e $PREFIX/bin/$i ]; then
             echo "  $i is OK"
@@ -171,6 +171,7 @@ function get_rootfs() {
     fi
     printf "${blue}[*] Downloading rootfs...${reset}\n\n"
     get_url
+    echo $ROOTFS_URL
     wget ${EXTRA_ARGS} --continue "${ROOTFS_URL}"
 }
 
