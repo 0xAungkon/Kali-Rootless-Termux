@@ -103,7 +103,7 @@ function set_strings() {
     ####
 
 
-    CHROOT=kali-${SYS_ARCH}
+    CHROOT=chroot/kali-${SYS_ARCH}
     IMAGE_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.tar.xz
     SHA_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.sha512sum
 }    
@@ -125,9 +125,9 @@ function cleanup() {
 	    if [ -f ${IMAGE_NAME} ]; then
                 rm -f ${IMAGE_NAME}
 	    fi
-	    if [ -f ${SHA_NAME} ]; then
-                rm -f ${SHA_NAME}
-	    fi
+	    # if [ -f ${SHA_NAME} ]; then
+        #         rm -f ${SHA_NAME}
+	    # fi
         fi
     fi
 } 
@@ -200,6 +200,7 @@ function extract_rootfs() {
     if [ -z $KEEP_CHROOT ]; then
         printf "\n${blue}[*] Extracting rootfs... ${reset}\n\n"
         proot --link2symlink tar -xf $IMAGE_NAME 2> /dev/null || :
+        
     else        
         printf "${yellow}[!] Using existing rootfs directory${reset}\n"
     fi
@@ -357,6 +358,7 @@ function fix_profile_bash() {
 }
 
 function fix_resolv_conf() {
+    echo $CHROOT
     ## We don't have systemd so let's use static entries for Quad9 DNS servers
     echo "nameserver 9.9.9.9" > $CHROOT/etc/resolv.conf
     echo "nameserver 149.112.112.112" >> $CHROOT/etc/resolv.conf
@@ -426,6 +428,9 @@ get_rootfs
 # get_sha
 # verify_sha
 extract_rootfs
+echo $ROOTFS_NAME 
+echo $CHROOT
+# mv $ROOTFS_NAME $CHROOT
 create_launcher
 cleanup
 
